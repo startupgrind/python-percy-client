@@ -11,7 +11,13 @@ shared: &shared
           name: Run tests
           command: py.test
 jobs:
-  'python27':
+  python-27:
       <<: *shared
       docker:
           - image: circleci/python:2.7
+
+workflows:
+  version: 2
+  build:
+    jobs:
+      - "python-27"
