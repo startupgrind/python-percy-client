@@ -1,13 +1,17 @@
 version: 2
-jobs:
-  build:
-    working_directory: ~/circleci-tox
-    docker:
-      - image: circleci/python:3.6.4 # every job must define an image for the docker executor and subsequent jobs may define a different image.
+shared: &shared
+    working_directory: ~/circleci-python-percy-client
     steps:
-        - checkout  # checkout source code to working directory
-        - run:
-              command: |  # use pipenv to install dependencies
-                  sudo pip install -U tox
-        - run:
-              command: tox
+      - checkout  # checkout source code to working directory
+      - run:
+            command: |  # use pipenv to install dependencies
+                sudo pip install pipenv
+                pipenv install
+      - run:
+          name: Run tests
+          command: py.test
+jobs:
+  'python27':
+      <<: *shared
+      docker:
+          - image: circleci/python:2.7
