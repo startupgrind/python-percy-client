@@ -8,6 +8,6 @@ jobs:
         - checkout  # checkout source code to working directory
         - run:
               command: |  # use pipenv to install dependencies
-                  pip install -U tox
+                  sudo pip install -U tox
         - run:
               command: tox
