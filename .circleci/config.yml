@@ -7,7 +7,7 @@ shared: &shared
             command: sudo apt-get install -y python-pip python-dev
       - run:
             command: |  # use pipenv to install dependencies
-                pip install -r requirements_dev.txt
+                sudo pip install -r requirements_dev.txt
       - run:
           name: Run tests
           command: py.test
