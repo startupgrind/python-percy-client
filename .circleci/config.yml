@@ -3,7 +3,7 @@ jobs:
   build:
     working_directory: ~/circleci-tox
     docker:
-      - image: circleci/python:3.5.7 # every job must define an image for the docker executor and subsequent jobs may define a different image.
+      - image: circleci/python:3.7.3 # every job must define an image for the docker executor and subsequent jobs may define a different image.
     steps:
         - checkout  # checkout source code to working directory
         - run:
