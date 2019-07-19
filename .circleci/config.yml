@@ -4,6 +4,8 @@ shared: &shared
     steps:
       - checkout  # checkout source code to working directory
       - run:
+            command: sudo apt-get install build-essential libssl-dev libffi-dev
+      - run:
             command: pipenv install --dev -r requirements.txt -r requirements_dev.txt
       - run:
           name: Run tests
