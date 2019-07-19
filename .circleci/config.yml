@@ -4,11 +4,7 @@ shared: &shared
     steps:
       - checkout  # checkout source code to working directory
       - run:
-            command: sudo apt-get install -y python-pip python-dev
-      - run:
-            command: python -m venv venv |
-                . venv/bin/activate |
-                pip install -r requirements_dev.txt
+            command: pipenv --dev
       - run:
           name: Run tests
           command: py.test
