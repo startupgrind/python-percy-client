@@ -15,8 +15,6 @@ jobs:
                 - v1-project-{{ arch }}-{{ checksum "tox.ini" }}
                 - v1-project-
         - run:
-            command: apt-get install openssl-dev
-        - run:
             command: |
                 pyenv --version
                 pyenv install --list
