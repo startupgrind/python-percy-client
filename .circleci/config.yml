@@ -20,10 +20,12 @@ jobs:
                 pyenv --version
                 pyenv install --list
                 pyenv install --keep --skip-existing 2.7.14
+                pyenv install --keep --skip-existing 3.4.7
+                pyenv install --keep --skip-existing 3.5.4
                 pyenv install --keep --skip-existing 3.6.4
                 pyenv rehash
                 pyenv versions
-                pyenv local  2.7.14 3.6.4
+                pyenv local  2.7.14 3.6.4 3.5.4 3.4.7
                 pip install --upgrade pip
                 pip install tox tox-pyenv
                 tox
