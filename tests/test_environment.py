@@ -337,8 +337,6 @@ class TestCircleEnvironment(BaseTestPercyEnvironment):
         assert self.environment.commit_sha == 'circle-commit-sha'
 
     def test_parallel_nonce(self):
-        assert self.environment.parallel_nonce == 'circle-workflow-workspace-id'
-        del os.environ['CIRCLE_WORKFLOW_WORKSPACE_ID']
         assert self.environment.parallel_nonce == 'circle-build-number'
 
     def test_parallel_total(self):
